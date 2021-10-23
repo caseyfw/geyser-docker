@@ -1,4 +1,4 @@
-FROM adoptopenjdk:8-jre-hotspot
+FROM adoptopenjdk:16-jre-hotspot
 VOLUME /data
 EXPOSE 19132
 
@@ -38,7 +38,7 @@ ENV GEYSER_METRICS_UUID; "generateduuid"
 
 RUN apt-get update && apt-get install -y gettext-base && rm -rf /var/lib/apt/lists/*
 
-ADD https://ci.nukkitx.com/job/GeyserMC/job/Geyser/job/master/$BUILD_TYPE/artifact/bootstrap/standalone/target/Geyser.jar /opt/Geyser.jar
+ADD https://ci.opencollab.dev/job/GeyserMC/job/Geyser/job/master/$BUILD_TYPE/artifact/bootstrap/standalone/target/Geyser.jar /opt/Geyser.jar
 
 COPY start.sh /usr/local/bin/start.sh
 COPY config.yml.template /opt/config.yml.template
