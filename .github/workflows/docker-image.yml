@@ -2,15 +2,15 @@ name: Build and push to Docker Hub
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   pull_request:
-    branches: [main]
+    branches: [master]
 
 env:
   IMAGE_NAME: caseyfw/geyser-mc
 
 jobs:
-  build:
+  build-and-push:
     runs-on: ubuntu-latest
 
     permissions:
